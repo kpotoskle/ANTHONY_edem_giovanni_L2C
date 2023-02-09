@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bienvenue sur la page de notre application vous etes connecté</h1>
+<p>Vous pouvez ajouter ici votre contenu</p>
+<h1>Welcome !</h1>
+
+<a href="{{ url_for('logout') }}">
+    <button>Log out</button>
+</a>
+
+
+{% endblock %}

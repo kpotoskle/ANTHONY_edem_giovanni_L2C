@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+        <fieldset>
+            
+                <div class="container py-5 h-100">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                      <div class="card shadow-2-sdivong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+              
+                          <h3 class="mb-5">Sign in</h3>
+                            
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="nom">Nom</label>        
+                                <input class="form-control" type="text" id="txt_nom" name="txt_nom" required>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="prenom">Prenom</label>
+                                <input class="form-control"  type="text" id="txt_prenom" name="txt_prenom" required>
+                            </div>        
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" id="txt_email" name="txt_email" placeholder="exemple@gamil.com" required>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="mot de passe">Mot de passe</label>
+                                <input class="form-control" type="password" id="txt_password" name="txt_password" required>
+                            </div>
+                            <div class="form-outline mb-4">
+                             <label class="form-label" for="mot de passe confirmé">confirmé le Mot de passe</label>
+                             <input class="form-control" type="password" id="txt_password_conf" name="txt_password_conf" required>    
+                            
+                            </div>
+                            <div>
+                                    {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                    <ul class="flashes">
+                                        {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    {% endwith %}
+                            </div>
+
+                            
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" name="envoyer" id="envoyer"> S'inscrire </button>
+                            <button class="btn btn-primary btn-lg btn-block" type="reset" id="annuler" name="annuler">Annuler</button>
+                        </div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+            
+        </fieldset>                        
+    </form>
+{% endblock %}
